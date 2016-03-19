@@ -1,4 +1,6 @@
 ﻿#NoEnv
+#include gdip.ahk
+#include md5.ahk
 
 If !pToken := Gdip_Startup()
 {
@@ -7,14 +9,14 @@ If !pToken := Gdip_Startup()
 }
 ; On exiting the program we will go to Exit subroutine to clean up any resources
 OnExit, Exit
-Gui, +E0x80000 -Caption +OwnDialogs +Owner +AlwaysOnTop +hwndGui1
+Gui, -Caption +OwnDialogs +Owner +AlwaysOnTop +hwndGui1 +E0x80000
 Gui, Show
 
 ; width:=256
 ; height:=256
 R:=128
 mode:="ellipse"	; {ellipse,rect}
-length:=17
+length:=7
 
 hbm := CreateDIBSection(2*R, 2*R)
 hdc := CreateCompatibleDC()
