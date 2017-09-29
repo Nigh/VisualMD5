@@ -16,7 +16,7 @@ Gui, Show
 ; height:=256
 R:=128
 mode:="ellipse"	; {ellipse,rect}
-length:=7
+length:=13		; how many dots used
 
 hbm := CreateDIBSection(2*R, 2*R)
 hdc := CreateCompatibleDC()
@@ -30,7 +30,7 @@ if(mode="rect")
 else if(mode="ellipse")
 	Gdip_FillEllipse(G, pBrush, 0, 0, 2*R, 2*R)
 
-txt:="羡亦"
+txt:="some sample text"
 clipboard:=MD5(txt, StrLen(txt))
 
 getMD5array(txt,array,length)
